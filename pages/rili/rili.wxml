@@ -1,0 +1,25 @@
+<view class="selected_date">
+  <view bindtap="preMonth" class="icon-left">
+    <image class="select_icon" src="../../images/icon-left.png"></image>
+  </view>
+  <view class="text_center">{{curYear+'年'+curMonth+'月'}}</view>
+  <view bindtap="nextMonth" class="icon-right">
+    <image class="select_icon" src="../../images/icon-right.png"></image>
+  </view>
+</view>
+<view class="calendar_panel">
+  <view class="calendar_box">
+    <view class="weekday_label">日</view>
+    <view class="weekday_label">一</view>
+    <view class="weekday_label">二</view>
+    <view class="weekday_label">三</view>
+    <view class="weekday_label">四</view>
+    <view class="weekday_label">五</view>
+    <view class="weekday_label">六</view>
+  </view>
+  <view class="calendar_box calendar_data" wx:for="{{dateList}}" wx:for-item="week" wx:key="dateList">
+    <view class="weekday_label" wx:for="{{week}}" wx:key="week">
+      <text class="{{item.bit?'bit':''}}" data-date="{{item}}">{{item.date}}</text>
+    </view>
+  </view>
+</view>
